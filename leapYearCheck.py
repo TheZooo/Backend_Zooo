@@ -16,11 +16,11 @@ def leapYearChecker(para):
 		div4 = para % 4
 		div100 = para % 100
 		div400 = para % 400
-		if (div4Deci == float(0)):
+		if (div4 == float(0)):
 			isLeapYear = True
-		if (div100Deci == float(0)):
+		if (div100 == float(0)):
 			isLeapYear = False
-			if (div400Deci == float(0)):
+			if (div400 == float(0)):
 				isLeapYear = True
 		if (isLeapYear):
 			print("The inputted year is a leap year: " + str(para))
