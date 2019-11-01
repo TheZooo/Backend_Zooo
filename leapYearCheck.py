@@ -1,6 +1,6 @@
 def yearStrCheck(para):
-	#Function will check if the string only has digits
-	#passes its parameter to other function
+	# Function will check if the string only has digits
+	# Passes its parameter to other function
 	if (para.isdigit()):
 		leapYearChecker(int(para))
 	else:
@@ -8,9 +8,11 @@ def yearStrCheck(para):
 		yearStrCheck(input("Year: "))
 		
 def leapYearChecker(para):
+	# Checks if the para/year is not negative
 	if (para < 0):
 		print("Year can't be less than 0")
 		yearStrCheck(input("Year: "))
+	# Checks if the year is a leap year
 	else:
 		isLeapYear = False
 		div4 = para % 4
