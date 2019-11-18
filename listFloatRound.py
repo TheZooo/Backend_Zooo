@@ -1,44 +1,45 @@
 myStringList = []
-myArray = [[1,5,8,3] , [3,1,1,4,6] , [9,3,3,2,8,5,4]]
-
-def rounder(*num):
-	#Goes through inputted numbers and rounds to the hundrenths
-	for x in num:
-		return round(x, 2)
+myFloatTuple = (3.141592, 8.249561, 21.0219421)
+myListArray = [[1,5,8,3], [3,1,1,4,6], [9,3,3,2,8,5,4]]
 
 def sortStrLen(lengths):
 	#Used as a key in sort to sort by string length
 	return len(lengths)
+
+def rounder(*flo):
+	#Goes through inputted numbers and rounds to the hundrenths
+	for x in flo:
+		return round(x, 2)
 	
-def alphebatizer(*item):
-	#Goes through the inputed strings and appends to a list
-	for string in item:
+def alphebatizer(*items):
+	#Goes through the inputted strings and appends to a list
+	for string in items:
 		myStringList.append(string)
 	#String List is sorted by alphabet and length, then printed out
 	myStringList.sort()
 	print(myStringList)
 	myStringList.sort(reverse=True, key=sortStrLen)
-	print('Longest Word: ' + myStringList[0])
-	print('Shortest Word: ' + myStringList[-1] + '\n')
+	print(f'Longest Word: {myStringList[0]}')
+	print(f'Shortest Word: {myStringList[-1]} \n')
 	myStringList.clear()
 
-
 def arrInfo(*mainArr):
-	#Goes through the inputed array
+	#Goes through the inputted array
 	for subArr in mainArr:
-		print(subArr)
-		print()
+		print(f'Main Array: {subArr} \n')
 		#Goes through sub arrays to find the index, mean, max, and min
 		for value in subArr:
-			print('Sub-List ' + str(subArr.index(value) + 1))
-			print('Sub-Length: ' + str(len(value)))
-			print('Mean: ' + str(round(sum(value) / len(subArr), 2)))
+			print(f'Sub-List {subArr.index(value) + 1}')
+			print(f'Sub-Length: {len(value)}')
+			print(f'Mean: {round(sum(value) / len(subArr), 2)}')
 			numList = value.copy()
 			numList.sort()
-			print('Max Value: ' + str(numList[-1]))
-			print('Min Value: ' + str(numList[0]) + '\n')
+			print(f'Max Value: {numList[-1]}')
+			print(f'Min Value: {numList[0]} \n')
 
 #Triggering Functions
-print(str(rounder(3.141592)) + '\n')
+for num in myFloatTuple:
+	print(f'{rounder(num)} Rounded \n')
 alphebatizer('Apple', 'Orange', 'Banana', 'Kiwi', 'Watermelon', 'Cantaloupe')
-arrInfo(myArray)
+alphebatizer('Durian', 'Starfruit', 'Lychee', 'Cherry')
+arrInfo(myListArray)
