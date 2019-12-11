@@ -1,15 +1,15 @@
 import MySQLdb
 #Connecting to database with mysqldb
-db = MySQLdb.connect(host="192.168.0.131", user="erizho21", passwd="zhou", db="erizho21")
+db = MySQLdb.connect(host="localhost", user="api", passwd="f103", db="people")
 db.autocommit(True)
 #Creating cursor
 cur = db.cursor(MySQLdb.cursors.DictCursor)
 #Variables
-name = 'Philip'
-age = 16
-gradeLevel = 11
+nameIn = 'Eric'
+ageIn = 16
+gradeLevelIn = 11
 #Sql command
-sql = f"INSERT INTO students (name, age, gradeLevel) VALUES ({name}, {age}, {gradeLevel})"
+sql = f"INSERT INTO students (name, age, gradeLevel) VALUES ('{nameIn}', '{ageIn}', '{gradeLevelIn}')"
 #Cursor executing sql code
 cur.execute(sql)
 #------SELECT BLOCK-------
